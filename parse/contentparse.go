@@ -2,6 +2,7 @@ package parse
 
 import (
 	"crawl-blog/engin"
+	"crawl-blog/write"
 	jsoniter "github.com/json-iterator/go"
 )
 
@@ -9,14 +10,20 @@ import (
 //function: 写入文件
 func Content(content []byte) (engin.Article, bool) {
 
-	data := make(map[string]interface{})
-	err := jsoniter.Unmarshal(content, &data)
-	if err != nil {
-		panic(err)
-	}
+	list := jsoniter.Get(content, "data")
+	needcontent := []byte(list.ToString())
 
+	title := jsoniter.Get(needcontent, "title").ToString()
+	originalContent := jsoniter.Get(needcontent, "originalContent").ToString()
+
+	jsoniter.Get(content, "data")
 	//originalContent := data["originalContent"]
 	//title := data["title"]
+	msgs := []string{
+		title,
+		originalContent,
+	}
+	write.WriteFile(msgs)
 
 	return engin.Article{}, false
 }
