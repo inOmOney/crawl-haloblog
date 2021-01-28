@@ -18,7 +18,6 @@ const newImgPath = "https://gitee.com/BzmAi/picture-bed/raw/master/"
 
 func WriteFile(content []string) {
 	replaceContent := strings.Replace(content[2], oldImgPath, newImgPath, -1)
-	replaceContent = strings.Replace(replaceContent, "http://www.theanything.top/upload/", "https://gitee.com/BzmAi/picture-bed/raw/master/", -1)
 	var filename string
 	if content[0] != "" {
 		filename = filepath + "\\" + content[0]
