@@ -12,8 +12,8 @@ import (
 
 //实现浏览器抓包拿到下面的数据
 const userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36"
-const Authorization = "xxxxxxx" // 这个经常变
-const cookie = "xxxxxx"
+const Authorization = "xxxxxxxxxx"
+const cookie = "xxxxxxxxxxx"
 
 func Fetch(url string) ([]byte, error) {
 	client := &http.Client{}
