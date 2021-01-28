@@ -22,10 +22,15 @@
 
 ### 效果展示
 
+|        | 文章列表                                                     |
+| ------ | ------------------------------------------------------------ |
+| halo   | <img src="https://gitee.com/BzmAi/picture-bed/raw/master/image-20210128161530406.png" width = "800" height = "800" alt="图片名称" align=center /> |
+| 拉取后 | <img src="https://gitee.com/BzmAi/picture-bed/raw/master/image-20210128161559739.png" width = "800" height = "800" alt="图片名称" align=center /> |
 
 
-|      | 图片地址                                                     | 文章列表                                                     |
-| ---- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| 之前 | <img src="https://gitee.com/BzmAi/picture-bed/raw/master/image-20210128161933671.png" width = "600" height = "400" alt="图片名称" align=center /> | <img src="https://gitee.com/BzmAi/picture-bed/raw/master/image-20210128161530406.png" width = "800" height = "500" alt="图片名称" align=center /> |
-| 之后 | <img src="https://gitee.com/BzmAi/picture-bed/raw/master/image-20210128162217551.png" width = "600" height = "400" alt="图片名称" align=center /> | <img src="https://gitee.com/BzmAi/picture-bed/raw/master/image-20210128161559739.png" width = "800" height = "500" alt="图片名称" align=center /> |
+
+|        | 图片地址                                                     |
+| ------ | ------------------------------------------------------------ |
+| halo   | <img src="https://gitee.com/BzmAi/picture-bed/raw/master/image-20210128161933671.png" width = "800" height = "400" alt="图片名称" align=center /> |
+| 拉取后 | <img src="https://gitee.com/BzmAi/picture-bed/raw/master/image-20210128162217551.png" width = "800" height = "400" alt="图片名称" align=center /> |
 
