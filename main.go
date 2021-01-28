@@ -5,9 +5,11 @@ import (
 	"crawl-blog/parse"
 )
 
+const seed = "http://www.zhb.cool/api/admin/posts?page=0&size=100"
+
 func main() {
 	engin.Run(engin.Request{
-		Url:       "http://www.zhb.cool/api/admin/posts?page=0&size=100",
+		Url:       seed,
 		ParseFunc: parse.ParseList,
 	})
 }

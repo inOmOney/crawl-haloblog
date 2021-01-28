@@ -19,8 +19,16 @@ const newImgPath = "https://gitee.com/BzmAi/picture-bed/raw/master/"
 func WriteFile(content []string) {
 	replaceContent := strings.Replace(content[1], oldImgPath, newImgPath, -1)
 	//replaceContent = strings.Replace(replaceContent, "http://www.theanything.top/upload/", "https://gitee.com/BzmAi/picture-bed/raw/master/", -1)
-
-	filename := filepath + "\\" + content[0] + ".md"
+	var filename string
+	if content[0] != "" {
+		filename = filepath + "\\" + content[0]
+		if !Exists(filename) {
+			os.Mkdir(filename, os.ModePerm)
+		}
+	} else {
+		filename = filepath
+	}
+	filename = filename + "\\" + content[1] + ".md"
 
 	file, err := os.OpenFile(filename, os.O_WRONLY|os.O_CREATE, 0666)
 	if err != nil {
@@ -37,8 +45,19 @@ func WriteFile(content []string) {
 	}
 	write.Flush()
 	if err != nil {
-		fmt.Printf("%s 写入失败\n", content[0])
+		fmt.Printf("%s 写入失败\n", content[1])
 	} else {
-		fmt.Printf("%s 写入成功\n", content[0])
+		fmt.Printf("%s 写入成功\n", content[1])
 	}
+}
+
+func Exists(path string) bool {
+	_, err := os.Stat(path) //os.Stat获取文件信息
+	if err != nil {
+		if os.IsExist(err) {
+			return true
+		}
+		return false
+	}
+	return true
 }

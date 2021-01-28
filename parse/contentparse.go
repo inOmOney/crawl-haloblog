@@ -10,19 +10,25 @@ import (
 //function: 写入文件
 func Content(content []byte) (engin.Article, bool) {
 
-	list := jsoniter.Get(content, "data")
+	json1 := jsoniter.Get(content, "data")
+	title_content := []byte(json1.ToString())
+
+	title := jsoniter.Get(title_content, "title").ToString()
+	originalContent := jsoniter.Get(title_content, "originalContent").ToString()
+
+	list := jsoniter.Get(title_content, "categories")
 	needcontent := []byte(list.ToString())
+	categories := jsoniter.Get(needcontent, 0, "name").ToString()
+	if categories == "默认" {
+		categories = ""
+	}
 
-	title := jsoniter.Get(needcontent, "title").ToString()
-	originalContent := jsoniter.Get(needcontent, "originalContent").ToString()
-
-	jsoniter.Get(content, "data")
-	//originalContent := data["originalContent"]
-	//title := data["title"]
 	msgs := []string{
+		categories,
 		title,
 		originalContent,
 	}
+
 	write.WriteFile(msgs)
 
 	return engin.Article{}, false

@@ -1,5 +1,0 @@
-
-http://www.zhb.cool/api/admin/posts?page=0&size=100   返回所有的文章id title
-
-
-http://www.zhb.cool/api/admin/posts/[id]  在json中获取文章的markdown格式的文本
